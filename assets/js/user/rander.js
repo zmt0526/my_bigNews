@@ -1,20 +1,5 @@
-$(function () {
-    getuserinfo()
-
-    let layer = layui.layer
-    $('#btngoout').on('click', function () {
-        layer.confirm('确认退出吗?', { icon: 3, title: '提示' }, function (index) {
-            localStorage.removeItem('token')
-            location.href = '../../login.html'
-
-            layer.close(index);//自带的关闭询问框
-        });
-    })
-
-})
-
-  //获取用户信息
-  function getuserinfo() {
+//获取用户信息
+function getuserinfo() {
     $.ajax({
         type: "get",
         url:'http://ajax.frontend.itheima.net/my/userinfo',
